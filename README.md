@@ -1,4 +1,4 @@
-# tmdb_crawl
+# tmdb-crawler
 
 __NOTE: This is a project in progress. It does not work at this moment.__
 
