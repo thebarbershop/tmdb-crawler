@@ -9,6 +9,7 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+data/
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -32,7 +33,7 @@ config/master.key
 /vendor/bundle
 
 # these should all be checked in to normalize the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
+Gemfile.lock, .ruby-version, .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
@@ -67,3 +68,4 @@ yarn-debug.log*
 
 
 mysql-5.*
+api.key

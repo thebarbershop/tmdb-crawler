@@ -20,7 +20,7 @@ Ubuntu 18.04에서 개발 및 테스트하였다.
 
 데이터베이스는 movie, credit_movie, tv, credit_tv, person의 다섯 테이블로 구성된다.
 
-![database scheme](dev/db.png)
+![database scheme](docs/db.png)
 
 - 영화 제목 영문명의 최대 길이는 255자를 넘지 않는다고 가정한다. (참고자료 [#1 IMDB의 유저 생성 리스트][long-movie-title-imdb], [#2 TvTropes의 관련 항목][long-movie-title-tvtropes])
 - 텔레비전 시리즈 제목 영문명의 최대 길이는 255자를 넘지 않는다고 가정한다. (참고자료 [#1 TvTropes의 관련 항목][long-tv-title-tvtropes], [#2 Digital Spy 포럼의 질문글][long-tv-title-digitalspy])
