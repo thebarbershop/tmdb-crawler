@@ -43,15 +43,15 @@ class CrawlUtils
         # http get으로 조회
         res = http_get (uri_get_person_details person_id)
         if not res
-            return "TMDB에서 조회 실패"
+            return "#{person_id} / TMDB에서 인물 조회 실패"
         end
         begin
             # people 테이블에 새로운 레코드로 id, name 입력
             person = Person.create(id: person_id, name: res["name"])
-            return res
+            return "#{person_id} / #{res["name"]} / people 테이블에 입력 완료"
         rescue ActiveRecord::RecordNotUnique
             # 이미 입력되어 있으면 무시
-            return "데이터베이스에 이미 존재"
+            return "#{person_id} / people 테이블에 이미 존재"
         end
     end
 
