@@ -36,11 +36,11 @@ def get_credit_tv tv_id
                     next
                 end
                 # 해당 인물을 people 테이블에 등록
-                p CrawlUtils.get_person credit["id"]
+                puts CrawlUtils.get_person credit["id"]
                 begin
                     # 해당 인물을 크레딧을 credit_tvs 테이블에 등록
                     credit_tv = CreditTv.create(role: crew_or_cast, tvs_id:tv_id, people_id:credit["id"])
-                    p "role: #{crew_or_cast}, people_id: #{credit["id"]}, tvs_id: #{tv_id} / 크레딧 정보 입력 완료"
+                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, tvs_id: #{tv_id} / 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next
                 end
@@ -52,4 +52,4 @@ end
 
 # 커맨드 라인으로 받은 파라미터에 해당하는 TV시리즈 정보 조회
 tv_id = ARGV[0]
-p get_tv tv_id
+puts get_tv tv_id
