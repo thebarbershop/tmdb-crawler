@@ -50,4 +50,4 @@ test:
 production:
   <<: *default
   database: tmdb_query_production
-  password: <%= ENV['TMDB-CRAWLER_DATABASE_PASSWORD'] %>
+  password: <%= ENV['TMDB_QUERY_DATABASE_PASSWORD'] %>

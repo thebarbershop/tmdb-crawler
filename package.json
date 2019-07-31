@@ -1,5 +1,5 @@
 {
-  "name": "tmdb-crawler",
+  "name": "tmdb_query",
   "private": true,
   "dependencies": {}
 }
