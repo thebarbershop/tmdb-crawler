@@ -12,7 +12,7 @@
   <tbody>
     <% @casts.each do |cast| %>
       <tr>
-        <td><%= cast.person.id %> </td>
+        <td>#<%= cast.person.id %> </td>
         <td><%= cast.person.name %> </td>
       </tr>
     <% end %>
@@ -29,7 +29,7 @@
   <tbody>
     <% @crews.each do |crew| %>
       <tr>
-        <td><%= crew.person.id %> </td>
+        <td>#<%= crew.person.id %> </td>
         <td><%= crew.person.name %> </td>
       </tr>
     <% end %>
@@ -38,4 +38,4 @@
 
 
 
-<%= link_to 'Back', tvs_path %>
+<%= link_to '뒤로', tvs_path %>
