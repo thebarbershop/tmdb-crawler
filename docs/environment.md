@@ -36,14 +36,19 @@
     sudo /usr/local/mysql/bin/mysqld_safe &
     ```
 
-1. ActiveRecord Migration을 실행한다.
+2. 개발 환경 또는 테스트 환경에서 Rails를 실행한다.
+
+    - 개발 환경
 
     ```sh
     rails db:migrate
+    rails server
     ```
 
-1. 루비 온 레일즈 서버를 실행한다.
+    - 테스트 환경
 
     ```sh
-    rails server
+    rake test:prepare
+    rails db:migrate RAILS_ENV=test
+    rails server -e test
     ```
