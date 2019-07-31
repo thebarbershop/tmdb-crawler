@@ -40,14 +40,14 @@ def get_credit_tv tv_id
                 begin
                     # 해당 인물을 크레딧을 credit_tvs 테이블에 등록
                     credit_tv = CreditTv.create(role: crew_or_cast, tvs_id:tv_id, people_id:credit["id"])
-                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, tvs_id: #{tv_id} / 크레딧 정보 입력 완료"
+                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, tvs_id: #{tv_id} / credit_tvs 테이블에 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next
                 end
             end
         end
     end
-    return "#{tv_id} / TV시리즈 크레딧 정보 입력 완료"
+    return "#{tv_id} / credit_tvs 테이블에 TV시리즈 크레딧 정보 입력 완료"
 end
 
 # 커맨드 라인으로 받은 파라미터에 해당하는 TV시리즈 정보 조회

@@ -47,17 +47,17 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 
     ```sh
     $ rails runner lib/crawl_movie.rb 150
-    Running via Spring preloader in process 26032
-    1723 / Walter Hill / people 테이블에 입력 완료
-    role: crew, people_id: 1723, movies_id: 150 / 크레딧 정보 입력 완료
-    1091 / Joel Silver / people 테이블에 입력 완료
-    role: crew, people_id: 1091, movies_id: 150 / 크레딧 정보 입력 완료
+    Running via Spring preloader in process 29213
+    1788 / Nicholas Meyer / people 테이블에 입력 완료
+    role: crew, people_id: 1788, movies_id: 154 / credit_movies 테이블에 크레딧 정보 입력 완료
+    1790 / Robert Sallin / people 테이블에 입력 완료
+    role: crew, people_id: 1790, movies_id: 154 / credit_movies 테이블에 크레딧 정보 입력 완료
     (중략)
-    1289395 / Bjaye Turner / people 테이블에 입력 완료
-    role: cast, people_id: 1289395, movies_id: 150 / 크레딧 정보 입력 완료
-    181343 / Begonya Plaza / people 테이블에 입력 완료
-    role: cast, people_id: 181343, movies_id: 150 / 크레딧 정보 입력 완료
-    150 / 48 Hrs. / movies 테이블에 입력 완료
+    1214565 / John Winston / people 테이블에 입력 완료
+    role: cast, people_id: 1214565, movies_id: 154 / credit_movies 테이블에 크레딧 정보 입력 완료
+    157612 / Paul Kent / people 테이블에 입력 완료
+    role: cast, people_id: 157612, movies_id: 154 / credit_movies 테이블에 크레딧 정보 입력 완료
+    154 / Star Trek II: The Wrath of Khan / movies 테이블에 입력 완료
     ```
 
 ### TV시리즈 정보 크롤
@@ -72,18 +72,17 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 
     ```sh
     $ rails runner lib/crawl_tv.rb 150
-    Running via Spring preloader in process 26357
-    1213841 / Jane Fallon / people 테이블에 입력 완료
-    role: crew, people_id: 1213841, tvs_id: 150 / 크레딧 정보 입력 완료
-    21841 / Tony Garnett / people 테이블에 입력 완료
-    role: crew, people_id: 21841, tvs_id: 150 / 크레딧 정보 입력 완료
-    1213842 / Edwina Craze / people 테이블에 입력 완료
+    Running via Spring preloader in process 29398
+    170497 / Norman Lear / people 테이블에 입력 완료
+    role: crew, people_id: 170497, tvs_id: 154 / credit_tvs 테이블에 크레딧 정보 입력 완료
+    1213872 / Allan Manings / people 테이블에 입력 완료
+    role: crew, people_id: 1213872, tvs_id: 154 / credit_tvs 테이블에 크레딧 정보 입력 완료
     (중략)
-    1213838 / Juliet Cowan / people 테이블에 입력 완료
-    role: cast, people_id: 1213838, tvs_id: 150 / 크레딧 정보 입력 완료
-    1213839 / Daniela Nardini / people 테이블에 입력 완료
-    role: cast, people_id: 1213839, tvs_id: 150 / 크레딧 정보 입력 완료
-    150 / This Life / tvs 테이블에 입력 완료
+    1213899 / Ben Powers / people 테이블에 입력 완료
+    role: cast, people_id: 1213899, tvs_id: 154 / credit_tvs 테이블에 크레딧 정보 입력 완료
+    54421 / Janet Jackson / people 테이블에 입력 완료
+    role: cast, people_id: 54421, tvs_id: 154 / credit_tvs 테이블에 크레딧 정보 입력 완료
+    154 / Good Times / tvs 테이블에 입력 완료
     ```
 
 [RVM]: https://rvm.io

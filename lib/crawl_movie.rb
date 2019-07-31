@@ -39,14 +39,14 @@ def get_credit_movie movie_id
                 begin
                     # 해당 크루의 크레딧을 credit_movies 테이블에 등록
                     credit_movie = CreditMovie.create(role: crew_or_cast, movies_id:movie_id, people_id:credit["id"])
-                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, movies_id: #{movie_id} / 크레딧 정보 입력 완료"
+                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, movies_id: #{movie_id} / credit_movies 테이블에 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next
                 end
             end
         end
     end
-    return "#{movie_id} / 영화 크레딧 정보 입력 완료"
+    return "#{movie_id} / credit_movies 테이블에 영화 크레딧 정보 입력 완료"
 end
 
 # 커맨드 라인으로 받은 파라미터에 해당하는 영화 정보 조회
