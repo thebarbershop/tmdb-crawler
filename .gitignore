@@ -68,4 +68,5 @@ yarn-debug.log*
 
 
 mysql-5.*
-api.key
+.vscode/
+dev/
