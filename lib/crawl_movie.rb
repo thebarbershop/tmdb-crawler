@@ -38,8 +38,8 @@ def get_credit_movie movie_id
                 puts CrawlUtils.get_person credit["id"]
                 begin
                     # 해당 크루의 크레딧을 credit_movies 테이블에 등록
-                    credit_movie = CreditMovie.create(role: crew_or_cast, movies_id:movie_id, people_id:credit["id"])
-                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, movies_id: #{movie_id} / credit_movies 테이블에 크레딧 정보 입력 완료"
+                    credit_movie = CreditMovie.create(role: crew_or_cast, movie_id:movie_id, person_id:credit["id"])
+                    puts "role: #{crew_or_cast}, person_id: #{credit["id"]}, person_id: #{movie_id} / credit_movies 테이블에 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next
                 end

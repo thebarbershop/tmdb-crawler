@@ -39,8 +39,8 @@ def get_credit_tv tv_id
                 puts CrawlUtils.get_person credit["id"]
                 begin
                     # 해당 인물을 크레딧을 credit_tvs 테이블에 등록
-                    credit_tv = CreditTv.create(role: crew_or_cast, tvs_id:tv_id, people_id:credit["id"])
-                    puts "role: #{crew_or_cast}, people_id: #{credit["id"]}, tvs_id: #{tv_id} / credit_tvs 테이블에 크레딧 정보 입력 완료"
+                    credit_tv = CreditTv.create(role: crew_or_cast, tv_id:tv_id, person_id:credit["id"])
+                    puts "role: #{crew_or_cast}, person_id: #{credit["id"]}, tv_id: #{tv_id} / credit_tvs 테이블에 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next
                 end
