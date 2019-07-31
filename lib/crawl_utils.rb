@@ -12,6 +12,7 @@ class Config
     tmdb_api_base = "https://api.themoviedb.org/3"
     @@tmdb_api_get_person_details = tmdb_api_base + "/person/%s"
     @@tmdb_api_get_movie_details = tmdb_api_base + "/movie/%s"
+    @@tmdb_api_get_movie_credits = tmdb_api_base + "/movie/%s/credits"
 
     def self.tmdb_api_get_person_details
         @@tmdb_api_get_person_details
@@ -19,23 +20,30 @@ class Config
     def self.tmdb_api_get_movie_details
         @@tmdb_api_get_movie_details
     end
+    def self.tmdb_api_get_movie_credits
+        @@tmdb_api_get_movie_credits
+    end
 end
 
 class CrawlUtils
+
+    # 각 API를 호출할 수 있는 URI를 생성
     def self.uri_get_person_details person_id
-        return safe_format Config.tmdb_api_get_person_details, person_id
+        safe_format Config.tmdb_api_get_person_details, person_id
     end
-    
     def self.uri_get_movie_details movie_id
-        return safe_format Config.tmdb_api_get_movie_details, movie_id
+        safe_format Config.tmdb_api_get_movie_details, movie_id
+    end
+    def self.uri_get_movie_credits movie_id
+        safe_format Config.tmdb_api_get_movie_credits, movie_id
     end
 
     # person_id에 해당하는 인물의 정보를 읽어서 people 테이블에 입력
     def self.get_person person_id
+        # http get으로 조회
         res = http_get (uri_get_person_details person_id)
         if not res
-            # 실패한 응답은 무시
-            return
+            return "TMDB에서 조회 실패"
         end
         begin
             # people 테이블에 새로운 레코드로 id, name 입력
@@ -43,7 +51,7 @@ class CrawlUtils
             return res
         rescue ActiveRecord::RecordNotUnique
             # 이미 입력되어 있으면 무시
-            return
+            return "데이터베이스에 이미 존재"
         end
     end
 
