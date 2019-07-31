@@ -22,7 +22,7 @@ Ubuntu 18.04에서 개발 및 테스트하였다.
 - 디폴트로 개발용 서버를 이용
 - 데이터베이스는 movie, credit_movie, tv, credit_tv, person의 다섯 테이블로 구성
 
-    ![database scheme](docs/db.png)
+    ![database scheme](docs/img/db-scheme.png)
 
     - 영화 제목 영문명의 최대 길이는 255자를 넘지 않는다고 가정 (참고자료 [#1 IMDB의 유저 생성 리스트][long-movie-title-imdb], [#2 TvTropes의 관련 항목][long-movie-title-tvtropes])
     - 텔레비전 시리즈 제목 영문명의 최대 길이는 255자를 넘지 않는다고 가정 (참고자료 [#1 TvTropes의 관련 항목][long-tv-title-tvtropes], [#2 Digital Spy 포럼의 질문글][long-tv-title-digitalspy])
@@ -85,6 +85,40 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
     154 / Good Times / tvs 테이블에 입력 완료
     ```
 
+## 결과 조회
+
+모든 주소는 Rails 서버에 대한 상대 주소 (디폴트: `http://localhost:3000`)
+
+### 메인 페이지
+
+- 주소: `/`
+- 실행 화면
+    ![index](docs/img/index.png)
+
+### 영화 목록 페이지
+
+- 주소: `/movies`
+- 실행 화면
+    ![index](docs/img/movies.png)
+
+### 영화 조회 페이지
+
+- 주소: `/movies/:id`
+- 실행 화면
+    ![index](docs/img/movies-id.png)
+
+### TV시리즈 목록 페이지
+
+- 주소: `/tvs`
+- 실행 화면
+    ![index](docs/img/tvs.png)
+
+### TV시리즈 조회 페이지
+
+- 주소: `/tvs/:id`
+- 실행 화면
+    ![index](docs/img/tvs-id.png)
+    
 [RVM]: https://rvm.io
 [TMDB]: https://www.themoviedb.org
 [long-movie-title-imdb]: https://www.imdb.com/list/ls064443882/
