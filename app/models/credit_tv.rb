@@ -1,0 +1,2 @@
+class CreditTv < ApplicationRecord
+end
