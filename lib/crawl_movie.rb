@@ -3,9 +3,10 @@ require_relative 'crawl_utils.rb'
 # movie_id에 해당하는 영화의 정보를 읽어서 관련 정보를 movies, credit_movies, people 테이블에 입력
 def get_movie movie_id
     # http get으로 조회
-    movie_res = CrawlUtils.http_get Config.tmdb_api_get_movie_details, movie_id
+    movie_res = CrawlUtils.http_get (CrawlUtils.uri_get_movie_details movie_id)
     if not movie_res
         return "TMDB에서 조회 실패"
+    end
     begin
         # people 테이블에 새로운 레코드로 id, name 입력
         movie = Movie.create(id: movie_id, title: movie_res["title"])
