@@ -10,6 +10,8 @@ class TvsController < ApplicationController
   # GET /tvs/1
   # GET /tvs/1.json
   def show
+    @casts = CreditTv.where(tv_id: @tv.id, role: "cast").order(created_at: :asc)
+    @crews = CreditTv.where(tv_id: @tv.id, role: "crew").order(created_at: :asc)
   end
 
   # GET /tvs/new

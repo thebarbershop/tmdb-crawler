@@ -10,6 +10,8 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @casts = CreditMovie.where(movie_id: @movie.id, role: "cast").order(created_at: :asc)
+    @crews = CreditMovie.where(movie_id: @movie.id, role: "crew").order(created_at: :asc)
   end
 
   # GET /movies/new

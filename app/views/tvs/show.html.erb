@@ -1,4 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_tv_path(@tv) %> |
+<h1><%= @tv.title %></h1>
+
+<table style = "float: left">
+  <thead>
+    <tr>
+      <th colspan="2">캐스트</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @casts.each do |cast| %>
+      <tr>
+        <td><%= cast.person.id %> </td>
+        <td><%= cast.person.name %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table style = "float: left">
+  <thead>
+    <tr>
+      <th colspan="2">크루</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crews.each do |crew| %>
+      <tr>
+        <td><%= crew.person.id %> </td>
+        <td><%= crew.person.name %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 <%= link_to 'Back', tvs_path %>
