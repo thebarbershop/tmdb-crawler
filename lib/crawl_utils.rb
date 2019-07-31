@@ -9,18 +9,22 @@ class Config
     end
 
     # 각 API마다 URI를 상수로 저장
-    @@tmdb_api_base = "https://api.themoviedb.org/3"
-    @@tmdb_api_get_person_details = @@tmdb_api_base + "/person"
+    tmdb_api_base = "https://api.themoviedb.org/3"
+    @@tmdb_api_get_person_details = tmdb_api_base + "/person"
+    @@tmdb_api_get_movie_details = tmdb_api_base + "/movie"
 
     def self.tmdb_api_get_person_details
         @@tmdb_api_get_person_details
+    end
+    def self.tmdb_api_get_movie_details
+        @@tmdb_api_get_movie_details
     end
 end
 
 class CrawlUtils
     ## URI에 GET을 요청하고 응답을 반환
     def self.http_get base_uri, id
-        # 사용하는 모든 API는 <base_uri>/<(movie|tv|person)_id> 꼴의 URI를 가지고 있다.
+        # 사용하는 모든 API는 <base_uri>/<id> 꼴의 URI를 가지고 있다.
         uri = URI(base_uri+"/#{id}")
         uri.query = URI.encode_www_form({
             :api_key => Config.api_key,
