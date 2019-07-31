@@ -4,16 +4,19 @@ require "json"
 class Config
     # TMDB API 키는 파일로 보관
     @@api_key = File.read("./dev/api.key").strip
-    def self.api_key
-        @@api_key
-    end
 
-    # 각 API마다 URI를 상수로 저장
+    # 각 API마다 URI를 리터럴로 저장
     tmdb_api_base = "https://api.themoviedb.org/3"
     @@tmdb_api_get_person_details = tmdb_api_base + "/person/%s"
     @@tmdb_api_get_movie_details = tmdb_api_base + "/movie/%s"
     @@tmdb_api_get_movie_credits = tmdb_api_base + "/movie/%s/credits"
+    @@tmdb_api_get_tv_details = tmdb_api_base + "/tv/%s"
+    @@tmdb_api_get_tv_credits = tmdb_api_base + "/tv/%s/credits"
 
+    # Class variable에 대한 getter 선언
+    def self.api_key
+        @@api_key
+    end
     def self.tmdb_api_get_person_details
         @@tmdb_api_get_person_details
     end
@@ -23,11 +26,17 @@ class Config
     def self.tmdb_api_get_movie_credits
         @@tmdb_api_get_movie_credits
     end
+    def self.tmdb_api_get_tv_details
+        @@tmdb_api_get_tv_details
+    end
+    def self.tmdb_api_get_tv_credits
+        @@tmdb_api_get_tv_credits
+    end
 end
 
 class CrawlUtils
 
-    # 각 API를 호출할 수 있는 URI를 생성
+    # 각 API를 호출할 수 있는 URI를 생성하는 메소드
     def self.uri_get_person_details person_id
         safe_format Config.tmdb_api_get_person_details, person_id
     end
@@ -37,11 +46,17 @@ class CrawlUtils
     def self.uri_get_movie_credits movie_id
         safe_format Config.tmdb_api_get_movie_credits, movie_id
     end
+    def self.uri_get_tv_details tv_id
+        safe_format Config.tmdb_api_get_tv_details, tv_id
+    end
+    def self.uri_get_tv_credits tv_id
+        safe_format Config.tmdb_api_get_tv_credits, tv_id
+    end
 
     # person_id에 해당하는 인물의 정보를 읽어서 people 테이블에 입력
     def self.get_person person_id
         # http get으로 조회
-        res = http_get (uri_get_person_details person_id)
+        res = http_get uri_get_person_details person_id
         if not res
             return "#{person_id} / TMDB에서 인물 조회 실패"
         end
