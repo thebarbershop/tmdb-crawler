@@ -5,15 +5,14 @@
 <table>
   <thead>
     <tr>
-      <th colspan="2"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= "##{movie.id} " + movie.title %> </td>
-        <td><%= link_to '크레딧 조회', movie %></td>
+        <td><%="##{movie.id}"%> <%= link_to "#{movie.title}", movie %> </td>
       </tr>
     <% end %>
   </tbody>
