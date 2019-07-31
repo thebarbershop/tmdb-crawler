@@ -33,7 +33,9 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 
 ## 실행 방법
 
-테스트 환경에서 실행할 경우, 각 명령 뒤에 `-e test` 옵션을 지정
+- MySQL과 Rails 서버가 구동 중인 상황
+- MySQL의 로그인 계정 등 환경 설정은 `config/database.yml`에서 지정
+- 테스트 환경에서 실행할 경우, 각 명령 뒤에 `-e test` 옵션을 지정
 
 ### 영화 정보 크롤
 
@@ -118,7 +120,7 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 - 주소: `/tvs/:id`
 - 실행 화면
     ![index](docs/img/tvs-id.png)
-    
+
 [RVM]: https://rvm.io
 [TMDB]: https://www.themoviedb.org
 [long-movie-title-imdb]: https://www.imdb.com/list/ls064443882/
