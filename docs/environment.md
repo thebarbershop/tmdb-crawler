@@ -6,6 +6,7 @@
 
     ```sh
     git clone https://github.com/thebarbershop/tmdb-query.git
+    cd tmdb-query
     ```
 
 1. (필요한 경우) 다음 스크립트를 실행하여 RVM을 설치한다.
