@@ -32,7 +32,7 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 
 ## 실행 방법
 
-- MySQL과 Rails 서버가 구동 중인 상황 (구동 방법은 [해당 문서](docs/environment.md#실행) 참고])
+- MySQL과 Rails 서버가 구동 중인 상황 (구동 방법은 [해당 문서](docs/environment.md#실행) 참고)
 - MySQL의 로그인 계정 등 환경 설정은 `config/database.yml`에서 지정
 - 테스트 환경에서 실행할 경우, 각 명령 뒤에 `-e test` 옵션을 지정
 
