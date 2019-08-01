@@ -26,9 +26,13 @@ Ubuntu 18.04에서 개발 및 테스트하였다.
 
 Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environment.md) 참고
 
+## API KEY 설정
+
+`dev/api.key` 파일에 TMDB에서 발급받은 api_key를 저장
+
 ## 실행 방법
 
-- MySQL과 Rails 서버가 구동 중인 상황
+- MySQL과 Rails 서버가 구동 중인 상황 (구동 방법은 [해당 문서](docs/environment.md#실행) 참고])
 - MySQL의 로그인 계정 등 환경 설정은 `config/database.yml`에서 지정
 - 테스트 환경에서 실행할 경우, 각 명령 뒤에 `-e test` 옵션을 지정
 

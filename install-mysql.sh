@@ -12,5 +12,6 @@ rm mysql-5.6.45-linux-glibc2.12-x86_64.tar.gz
 sudo ln -s `pwd`/mysql-5.6.45-linux-glibc2.12-x86_64 /usr/local/mysql
 export PATH=$PATH:/usr/local/mysql/bin
 sudo /usr/local/mysql/scripts/mysql_install_db --user=mysql --basedir /usr/local/mysql --datadir=/usr/local/mysql/data
+sudo chmod +755 -R `pwd`/mysql-5.6.45-linux-glibc2.12-x86_64
 sudo /usr/local/mysql/bin/mysqld_safe &
 /usr/local/mysql/bin/mysql_secure_installation

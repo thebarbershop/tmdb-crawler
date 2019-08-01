@@ -2,7 +2,22 @@
 
 ## 설치
 
-1. (필요한 경우) 다음 스크립트를 실행하여 RVM, Ruby 2.5.3, Bundler 2.0.1를 설치한다.
+1. 본 git 저장소를 다운로드한다.
+
+    ```sh
+    git clone https://github.com/thebarbershop/tmdb-query.git
+    ```
+
+1. (필요한 경우) 다음 스크립트를 실행하여 RVM을 설치한다.
+
+    ```sh
+    sudo chmod +755 install-rvm.sh
+    ./install-rvm.sh
+    ```
+
+    - 시스템을 재시작한다.
+
+1. (필요한 경우) 다음 명령을 실행하여 Ruby 2.5.3와 Bundler 2.0.1을 설치한다.
 
     ```sh
     sudo chmod +755 install-ruby.sh
@@ -14,12 +29,6 @@
     ```sh
     sudo chmod +755 install-mysql.sh
     ./install-mysql.sh
-    ```
-
-1. 본 git 저장소를 다운로드한다.
-
-    ```sh
-    git clone https://github.com/thebarbershop/tmdb-query.git
     ```
 
 1. bundler를 이용하여 본 어플리케이션에 필요한 gem을 설치한다.
@@ -41,6 +50,7 @@
     - 개발 환경
 
     ```sh
+    rake db:create
     rails db:migrate
     rails server
     ```
@@ -49,6 +59,7 @@
 
     ```sh
     rake test:prepare
+    rake db:create
     rails db:migrate RAILS_ENV=test
     rails server -e test
     ```
