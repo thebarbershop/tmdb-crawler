@@ -51,6 +51,7 @@
     - 개발 환경
 
     ```sh
+    sudo chmod +755 -R mysql-5.6.45-linux-glibc2.12-x86_64/
     rake db:create
     rails db:migrate
     rails server
@@ -59,6 +60,7 @@
     - 테스트 환경
 
     ```sh
+    sudo chmod +755 -R mysql-5.6.45-linux-glibc2.12-x86_64/
     rake test:prepare
     rake db:create
     rails db:migrate RAILS_ENV=test

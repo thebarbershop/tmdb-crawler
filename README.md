@@ -38,6 +38,12 @@ Ruby와 MySQL 환경이 구축되지 않은 경우 [해당 문서](docs/environm
 
 ### 영화 정보 크롤
 
+`rails runner` 커맨드에서 MySQL 데이터베이스에 대해 Permission denied 에러가 발생하면 다음 명령을 실행한다.
+
+```sh
+sudo chmod +755 -R mysql-5.6.45-linux-glibc2.12-x86_64/
+```
+
 - 실행 명령
 
     ```sh
