@@ -30,4 +30,3 @@ module CrawlConfig
         @@tmdb_api_get_tv_credits
     end
 end
-

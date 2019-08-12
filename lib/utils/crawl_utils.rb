@@ -42,5 +42,4 @@ module CrawlUtils
             unformatted_str % ""
         end
     end
-
 end
