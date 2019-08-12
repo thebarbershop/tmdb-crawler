@@ -20,10 +20,10 @@ class Movie < ApplicationRecord
 
         # people 테이블에 새로운 레코드로 id, name 입력
         movie = Movie.new(id: movie_id, title: res["title"])
+        movie.save!
 
         # 해당 영화의 크레딧 정보 조회
         CreditMovie.create_all_credit_movie movie_id
-        movie.save
         puts "#{movie_id} / #{res["title"]} / movies 테이블에 입력 완료"
         return movie
     end

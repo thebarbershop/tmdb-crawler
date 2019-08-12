@@ -26,7 +26,8 @@ class CreditMovie < ApplicationRecord
                 Person.create_person credit["id"]
                 begin
                     # 해당 인물의 크레딧을 credit_movies 테이블에 등록
-                    credit_movie = CreditMovie.create(role: crew_or_cast, movie_id:movie_id, person_id:credit["id"])
+                    credit_movie = CreditMovie.new(role: crew_or_cast, movie_id:movie_id, person_id:credit["id"])
+                    credit_movie.save!
                     puts "role: #{crew_or_cast}, person_id: #{credit["id"]}, movie_id: #{movie_id} / credit_movies 테이블에 크레딧 정보 입력 완료"
                 rescue ActiveRecord::RecordNotUnique
                     next

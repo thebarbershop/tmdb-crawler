@@ -20,10 +20,10 @@ class Tv < ApplicationRecord
 
         # people 테이블에 새로운 레코드로 id, name 입력
         tv = Tv.new(id: tv_id, title: res["name"])
+        tv.save!
 
         # 해당 TV시리즈의 크레딧 정보 조회
         CreditTv.create_all_credit_tv tv_id
-        tv.save
         puts "#{tv_id} / #{res["name"]} / tvs 테이블에 입력 완료"
         return tv
     end
